@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Inter:wght@100..900&display=swap');
+
+:root {
+  --bg-color: #0a0a0a;
+  --text-color: #ffffff;
+  --text-secondary: #a1a1a1;
+  --accent-color: #3b82f6;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --font-main: 'Outfit', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+}
+
+::selection {
+  background: var(--accent-color);
+  color: white;
+}
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none !important; /* Force hide everywhere */
+}
+
+
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  width: 100%;
+  cursor: none; /* Hide default cursor */
+}
+
+
+/* Global Grain Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  animation: noise 0.2s infinite;
+}
+
+@keyframes noise {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-1%, -1%); }
+  20% { transform: translate(1%, 1%); }
+  30% { transform: translate(-2%, 2%); }
+  40% { transform: translate(2%, -2%); }
+  50% { transform: translate(-1%, 1%); }
+  60% { transform: translate(1%, -1%); }
+  70% { transform: translate(2%, 2%); }
+  80% { transform: translate(-2%, -2%); }
+  90% { transform: translate(1%, -2%); }
+  100% { transform: translate(-1%, 2%); }
+}
+
+body {
+  line-height: 1.5;
+}
+
+
+canvas {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+}
+
+.section-padding {
+  padding: 10rem 0;
+}
+
+@media (max-width: 1024px) {
+  .section-padding {
+    padding: 8rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 6rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .project-card {
+    height: 500px !important;
+    padding: 2rem !important;
+    margin-bottom: 4rem !important;
+  }
+
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.navbar {
+  padding: 2.5rem 0;
+}
+
+.logo {
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  gap: 3rem;
+}
+
+.nav-link {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem 0;
+  }
+  
+  .logo {
+    font-size: 1rem;
+  }
+  
+  .nav-links {
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.7rem;
+  }
+}
+
+
