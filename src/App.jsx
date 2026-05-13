@@ -93,7 +93,7 @@ const Loader = () => {
         transition={{ duration: 0.8 }}
         style={{ fontSize: '0.75rem', letterSpacing: '0.8em', fontWeight: 400, opacity: 0.6 }}
       >
-        ANTIGRAVITY STUDIO
+        GAURAV SINGH
       </motion.div>
     </motion.div>
   )
