@@ -1,16 +1,21 @@
 import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLenis } from './SmoothScroll'
 
 const ProjectModal = ({ project, onClose }) => {
+  const lenisRef = useLenis()
+
   useEffect(() => {
+    lenisRef?.current?.stop()
     const handleKey = (e) => { if (e.key === 'Escape') onClose() }
     document.addEventListener('keydown', handleKey)
     document.body.style.overflow = 'hidden'
     return () => {
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
+      lenisRef?.current?.start()
     }
-  }, [onClose])
+  }, [onClose, lenisRef])
 
   return (
     <motion.div
@@ -38,7 +43,6 @@ const ProjectModal = ({ project, onClose }) => {
         exit={{ y: '100%' }}
         transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
         onClick={e => e.stopPropagation()}
-        data-lenis-prevent
         style={{
           position: 'relative',
           width: '100%',
