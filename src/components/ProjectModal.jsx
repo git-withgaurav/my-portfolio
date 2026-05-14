@@ -38,6 +38,7 @@ const ProjectModal = ({ project, onClose }) => {
         exit={{ y: '100%' }}
         transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
         onClick={e => e.stopPropagation()}
+        data-lenis-prevent
         style={{
           position: 'relative',
           width: '100%',
