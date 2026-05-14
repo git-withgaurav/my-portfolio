@@ -185,21 +185,25 @@ html.lenis, html.lenis body {
   font-size: 0.8rem;
 }
 
+.hamburger-btn {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .navbar {
     padding: 1.5rem 0;
   }
-  
+
   .logo {
     font-size: 1rem;
   }
-  
-  .nav-links {
-    gap: 1.5rem;
+
+  .desktop-nav {
+    display: none !important;
   }
-  
-  .nav-link {
-    font-size: 0.7rem;
+
+  .hamburger-btn {
+    display: flex !important;
   }
 }
 

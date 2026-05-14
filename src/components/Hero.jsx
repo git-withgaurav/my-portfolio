@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { motion } from 'framer-motion'
 import Magnetic from './Magnetic'
+import HeroCanvas from './HeroCanvas'
 
 const Hero = () => {
   const containerRef = useRef(null)
@@ -33,8 +34,9 @@ const Hero = () => {
   const line2 = "DEVELOPER"
 
   return (
-    <section ref={containerRef} className="hero section-padding" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
-      <div className="container" style={{ marginLeft: 0 }}>
+    <section ref={containerRef} className="hero section-padding" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', position: 'relative' }}>
+      <HeroCanvas />
+      <div className="container" style={{ marginLeft: 0, position: 'relative', zIndex: 1 }}>
         <div ref={titleRef} style={{ marginBottom: '2.5rem', textAlign: 'left' }}>
           <h1 style={{ 
             fontSize: 'clamp(3rem, 15vw, 11rem)', 
