@@ -31,13 +31,6 @@ const Magnetic = ({ children, strength = 0.5 }) => {
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ 
-        position: 'relative', 
-        display: 'inline-block',
-        padding: '20px', // Larger hit area
-        margin: '-20px'  // Offset padding to maintain layout
-      }}
-      animate={{ x: 0, y: 0 }} // This is just to satisfy the motion div if needed
       style={{ x, y, display: 'inline-block', position: 'relative', padding: '20px', margin: '-20px' }}
     >
       {children}
