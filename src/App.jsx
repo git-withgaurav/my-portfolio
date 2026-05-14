@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Magnetic strength={0.4}>
             <a href="/" className="logo interactive" style={{ fontWeight: 900, letterSpacing: '-0.05em' }}>
-              ANTIGRAVITY
+              Gaurav Singh
             </a>
           </Magnetic>
 
@@ -230,7 +230,7 @@ function App() {
         <main>
           <Hero />
 
-          <Marquee items={marqueeItems} speed={0.3} />
+          <Marquee items={marqueeItems} speed={1.2} />
 
           <Projects />
 
